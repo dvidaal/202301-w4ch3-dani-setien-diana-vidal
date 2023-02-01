@@ -1,35 +1,37 @@
+import NumberKey from "../Key/Key";
+
 const Keyboard = (): JSX.Element => {
   return (
     <ol className="keyboard">
       <li>
-        <button className="key">1</button>
+        <NumberKey number={1} className={"key"} />
       </li>
       <li>
-        <button className="key">2</button>
+        <NumberKey number={2} className={"key"} />
       </li>
       <li>
-        <button className="key">3</button>
+        <NumberKey number={3} className={"key"} />
       </li>
       <li>
-        <button className="key">4</button>
+        <NumberKey number={4} className={"key"} />
       </li>
       <li>
-        <button className="key">5</button>
+        <NumberKey number={5} className={"key"} />
       </li>
       <li>
-        <button className="key">6</button>
+        <NumberKey number={6} className={"key"} />
       </li>
       <li>
-        <button className="key">7</button>
+        <NumberKey number={7} className={"key"} />
       </li>
       <li>
-        <button className="key">8</button>
+        <NumberKey number={8} className={"key"} />
       </li>
       <li>
-        <button className="key">9</button>
+        <NumberKey number={9} className={"key"} />
       </li>
       <li>
-        <button className="key">0</button>
+        <NumberKey number={0} className={"key"} />
       </li>
       <li>
         <button className="key big">delete</button>
