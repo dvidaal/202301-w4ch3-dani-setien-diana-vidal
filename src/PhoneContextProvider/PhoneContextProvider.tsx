@@ -1,8 +1,25 @@
-import { createContext } from "react";
-import { PhoneContextStructure } from "../Context/PhoneContext";
+import { useState } from "react";
+import PhoneContext from "../Context/PhoneContext";
 
-export interface PhoneContextProviderProps {
+interface PhoneContextProviderProps {
   children: JSX.Element | JSX.Element[];
 }
 
-export const PhoneContext = createContext({} as PhoneContextStructure);
+const PhoneContextProvider = ({
+  children,
+}: PhoneContextProviderProps): JSX.Element => {
+  const [phoneNumber, setNumber] = useState("");
+  const [isCalling] = useState(true);
+
+  const addNumber = (num: string) => {
+    setNumber(num + 1);
+  };
+
+  return (
+    <PhoneContext.Provider value={{ phoneNumber, isCalling, addNumber }}>
+      {children}
+    </PhoneContext.Provider>
+  );
+};
+
+export default PhoneContextProvider;

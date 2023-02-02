@@ -1,5 +1,7 @@
-const Display = (): JSX.Element => {
-  return <span className="number">667359961</span>;
-};
+interface DisplayProps {
+  phoneNumber: string;
+}
 
-export default Display;
+export const Display = ({ phoneNumber }: DisplayProps): JSX.Element => {
+  return <span className="number">{phoneNumber}</span>;
+};

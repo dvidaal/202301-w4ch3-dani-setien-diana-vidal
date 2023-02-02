@@ -14,7 +14,7 @@
   position: relative;
 }
 
-.key:after {
+.key::after {
   content: "";
   width: 100%;
   height: 100%;
