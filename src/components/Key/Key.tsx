@@ -1,5 +1,5 @@
 interface KeyProps {
-  number: number;
+  text: string;
   className: string;
 }
 
@@ -8,8 +8,8 @@ interface KeyBigProps {
   className: string;
 }
 
-export const NumberKey = ({ number, className }: KeyProps): JSX.Element => {
-  return <button className={`${className}`}>{number}</button>;
+export const NumberKey = ({ text, className }: KeyProps): JSX.Element => {
+  return <button className={`${className}`}>{text}</button>;
 };
 
 export const StringKey = ({ text, className }: KeyBigProps): JSX.Element => {
