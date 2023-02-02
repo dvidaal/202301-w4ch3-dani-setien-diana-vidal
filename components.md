@@ -2,46 +2,65 @@
 
 ## DATA LAYER
 
-- Phone number
-- Is calling (boolean)
+- phoneNumber ( string )
+- isCalling ( boolean )
 
 ## DATA MODIFICATIONS
 
 - Add digit to phone number
 - Clear phone number
-- Set 'Is calling' (true)
-- Set 'Is calling' (false)
+
+- Set isCalling to true
+- Set isCalling to false
 
 # COMPONENTS
 
-## PROVIDER (CONTEXT)
+## CONTEXT
 
-- Contains the function to add a number
-- Contains the function to clear the whole number
-- Contains the function to call
-- Contains the function to hang up
+- Contains phoneNumber
+- Contains isCalling
+
+- Contains the function addNumber
+- Contains the function clearNumber
+- Contains the function call
+- Contains the function hangUp
 
 ## APP
 
 ## INFO
 
-- Shows the 'is calling' status
+- Receives isCalling from Context
+
+- Shows the isCalling status
 
 ## DISPLAY
 
-- Shows the result of the 'add a number' function
-- Shows the result of the 'clear the number' function
+- Receives phoneNumber from Context
+
+- Shows phoneNumber
 
 ## ACTIONS
 
-### ACTION
+- Receives isCalling from Context
+
+- Shows either Action component ( conditional rendering )
+
+## ACTION
+
+- Receives phoneNumber from Context ( we add "active" class )
 
 - One of the 'Action' components takes the function to call
+
 - One of the 'Action' components takes the function to hung up
 
 ## KEYBOARD
 
-### KEY
+- Receives isCalling from Context ( to deactivate the Keys )
 
-- Takes the function to add a number
-- Takes the function to clear the whole number
+## KEY
+
+- Receives addNumber function from Context
+
+- Receives the addNumber function from Context
+
+- Receives the clearNumber function from Context
