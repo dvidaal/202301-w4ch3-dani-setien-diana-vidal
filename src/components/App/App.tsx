@@ -1,11 +1,12 @@
 import ActionKey from "../ActionKey/ActionKey";
 import { Display } from "../Display/Display";
+import Info from "../Info/Info";
 import Keyboard from "../Keyboard/Keyboard";
 
 const App = (): JSX.Element => {
   return (
     <>
-      <span className="message">Calling...</span>
+      <Info />
       <main className="phone">
         <div className="keyboard-container">
           <Keyboard />
