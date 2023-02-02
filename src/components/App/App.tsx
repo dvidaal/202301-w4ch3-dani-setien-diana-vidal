@@ -1,3 +1,4 @@
+import ActionKey from "../ActionKey/ActionKey";
 import { Display } from "../Display/Display";
 import Keyboard from "../Keyboard/Keyboard";
 
@@ -12,13 +13,8 @@ const App = (): JSX.Element => {
         <div className="actions">
           <Display phoneNumber="699542428" />
 
-          <a href="call" className="call">
-            Call
-          </a>
-
-          <a href="hang-up" className="hang active">
-            Hang up
-          </a>
+          <ActionKey text="Call" className="call" />
+          <ActionKey text="Hang up" className="hang-up" />
         </div>
       </main>
     </>
