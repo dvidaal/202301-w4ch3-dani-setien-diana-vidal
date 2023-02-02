@@ -2,7 +2,7 @@ import { useContext } from "react";
 import PhoneContext from "../../Context/PhoneContext";
 
 interface KeyProps {
-  number: string;
+  text: string;
   className: string;
 }
 
@@ -11,15 +11,15 @@ interface KeyBigProps {
   className: string;
 }
 
-export const NumberKey = ({ number, className }: KeyProps): JSX.Element => {
+export const NumberKey = ({ text, className }: KeyProps): JSX.Element => {
   const { phoneNumber, addNumber } = useContext(PhoneContext);
 
   return (
     <button
       className={`${className}`}
-      onClick={() => addNumber(phoneNumber, number)}
+      onClick={() => addNumber(phoneNumber, text)}
     >
-      {number}
+      {text}
     </button>
   );
 };
