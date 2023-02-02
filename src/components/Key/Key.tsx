@@ -1,11 +1,22 @@
+import { useContext } from "react";
+import PhoneContext from "../../Context/PhoneContext";
+
 interface KeyProps {
-  number: number;
-  //function: () => void;
+  number: string;
   className: string;
 }
 
 const NumberKey = ({ number, className }: KeyProps): JSX.Element => {
-  return <button className={`${className}`}>{number}</button>;
+  const { phoneNumber, addNumber } = useContext(PhoneContext);
+
+  return (
+    <button
+      className={`${className}`}
+      onClick={() => addNumber(phoneNumber, number)}
+    >
+      {number}
+    </button>
+  );
 };
 
 export default NumberKey;

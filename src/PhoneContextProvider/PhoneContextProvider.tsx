@@ -11,8 +11,10 @@ const PhoneContextProvider = ({
   const [phoneNumber, setNumber] = useState("");
   const [isCalling] = useState(true);
 
-  const addNumber = (num: string) => {
-    setNumber(num + 1);
+  const addNumber = (phoneNumber: string, num: string) => {
+    return phoneNumber.length < 9
+      ? setNumber(`${phoneNumber}${num}`)
+      : setNumber(phoneNumber);
   };
 
   return (
