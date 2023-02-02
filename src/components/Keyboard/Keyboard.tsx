@@ -1,4 +1,4 @@
-import NumberKey from "../Key/Key";
+import { NumberKey, StringKey } from "../Key/Key";
 
 const Keyboard = (): JSX.Element => {
   return (
@@ -34,7 +34,7 @@ const Keyboard = (): JSX.Element => {
         <NumberKey number={0} className={"key"} />
       </li>
       <li>
-        <button className="key big">delete</button>
+        <StringKey className="key big" text="delete" />
       </li>
     </ol>
   );
