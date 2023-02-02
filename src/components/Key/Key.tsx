@@ -6,7 +6,12 @@ interface KeyProps {
   className: string;
 }
 
-const NumberKey = ({ number, className }: KeyProps): JSX.Element => {
+interface KeyBigProps {
+  text: string;
+  className: string;
+}
+
+export const NumberKey = ({ number, className }: KeyProps): JSX.Element => {
   const { phoneNumber, addNumber } = useContext(PhoneContext);
 
   return (
@@ -19,4 +24,6 @@ const NumberKey = ({ number, className }: KeyProps): JSX.Element => {
   );
 };
 
-export default NumberKey;
+export const StringKey = ({ text, className }: KeyBigProps): JSX.Element => {
+  return <button className={`${className}`}>{text}</button>;
+};
