@@ -2,21 +2,25 @@ import { useState } from "react";
 import PhoneContext from "../Context/PhoneContext";
 
 interface PhoneContextProviderProps {
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element;
 }
 
 const PhoneContextProvider = ({
   children,
 }: PhoneContextProviderProps): JSX.Element => {
   const [phoneNumber, setNumber] = useState("");
-  const [isCalling] = useState(true);
+  const [isCalling] = useState(false);
 
-  const addNumber = (num: string) => {
-    setNumber(num + 1);
+  const addDigit = (phoneNumber: string, num: string) => {
+    return phoneNumber.length < 9
+      ? setNumber(`${phoneNumber}${num}`)
+      : setNumber(phoneNumber);
   };
 
   return (
-    <PhoneContext.Provider value={{ phoneNumber, isCalling, addNumber }}>
+    <PhoneContext.Provider
+      value={{ phoneNumber, isCalling, addNumber: addDigit }}
+    >
       {children}
     </PhoneContext.Provider>
   );

@@ -1,8 +1,9 @@
 import { createContext } from "react";
+
 interface PhoneContextStructure {
   phoneNumber: string;
   isCalling: boolean;
-  addNumber: (number: string) => void;
+  addNumber: (phoneNumber: string, number: string) => void;
 }
 
 const PhoneContext = createContext({} as PhoneContextStructure);
