@@ -11,7 +11,7 @@ const App = (): JSX.Element => {
           <Keyboard />
         </div>
         <div className="actions">
-          <Display phoneNumber="699542428" />
+          <Display />
 
           <ActionKey text="Call" className="call" />
           <ActionKey text="Hang up" className="hang-up" />
